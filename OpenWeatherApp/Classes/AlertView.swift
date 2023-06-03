@@ -1,10 +1,3 @@
-//
-//  AlertView.swift
-//  OpenWeatherApp
-//
-//  Created by Snehal Kerkar on 02/06/23.
-//
-
 import UIKit
 
 final class AlertView: NSObject {

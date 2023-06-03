@@ -1,10 +1,3 @@
-//
-//  WeatherViewController.swift
-//  OpenWeatherApp
-//
-//  Created by Snehal Kerkar on 02/06/23.
-//
-
 import CoreLocation
 import UIKit
 
@@ -76,7 +69,7 @@ extension WeatherViewController: UISearchBarDelegate {
 	
 	func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 		guard let cityName = searchBar.text else {
-			// Handle error
+      AlertView.showAlert(message: "Failed to retrieve city name", on: self)
 			return
 		}
 		checkWeather(of: cityName)
@@ -90,12 +83,16 @@ extension WeatherViewController: CLLocationManagerDelegate {
 		guard let location: CLLocation = manager.location else { return }
 		CLGeocoder().reverseGeocodeLocation(location) { placemarks, error in
 			guard error == nil else {
+        let message = error?.localizedDescription ?? "reverseGeocodeLocation API request failed."
+        AlertView.showAlert(message: message, on: self)
 				return
 			}
+
 			guard let cityName = placemarks?.first?.locality else {
-				
+        AlertView.showAlert(message: "Failed to retrieve city name", on: self)
 				return
 			}
+
 			self.citySearchBar.text = cityName
 			let urlEncodedName = cityName.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
 			self.checkWeather(of: urlEncodedName ?? "")

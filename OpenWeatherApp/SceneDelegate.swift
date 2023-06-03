@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  OpenWeatherApp
-//
-//  Created by Snehal Kerkar on 02/06/23.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

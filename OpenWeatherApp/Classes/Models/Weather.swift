@@ -1,12 +1,6 @@
-//
-//  Weather.swift
-//  OpenWeatherApp
-//
-//  Created by Snehal Kerkar on 02/06/23.
-//
-
 import Foundation
 
+/// Structure contains all the weather realted required info.
 struct Weather: Decodable {
 	let id: Int
 	let main: String

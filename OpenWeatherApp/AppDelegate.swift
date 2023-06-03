@@ -1,16 +1,7 @@
-//
-//  AppDelegate.swift
-//  OpenWeatherApp
-//
-//  Created by Snehal Kerkar on 02/06/23.
-//
-
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
 
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
